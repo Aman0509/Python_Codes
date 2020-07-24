@@ -1,0 +1,6 @@
+Customer ID,Bank Account No,First Name,Last Name,Father Name,Mother Name,Single or Married,Account Type,Address,Contact No,Email ID,ID Proof,Status (Active/Idle/Closed)
+500001,109734500001,Ramesh,Powar,S Powar,Rita Powar,Single,Savings,Kochi,9999922222,ramesh@gmail.com,PAN Card,Active
+500002,109734500002,Suresh,Raina,SK Raina,Vineeta Raina,Married,Savings,Lucknow,6567712345,suresh@gmail.com,Driver's License,Active
+500003,109734500003,Anushka,Sharma,RK Sharma,Sunita Sharma,Married,Current,Mumbai,9888112235,anushka@gmail.com,Passport,Idle
+500004,109734500004,Ravi Chandra,Yadav,KR Yadav,Meera Devi,Single,Savings,Patna,7893214567,kyadav@gmail.com,Aadhar Card,Closed
+500005,109734500005,Harshit,Saxena,KC Saxena,Seema Saxena,Single,Savings,Agra,9889208066,hsaxena10@gmail.com,PAN Card,Active

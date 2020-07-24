@@ -1,0 +1,4 @@
+Admin_ID,First Name,Last Name,Department,Contact Number,Privilege,Emp_Status (Regular or Contracter),Is currently working or not? (Y or N)
+20001,Aman,Saxena,IT - Admin,8976125436,Root,Regular,Y
+20002,Priya,Shrivastava,IT - Admin,9845312673,Root,Regular,Y
+20003,Rahul,Varma,IT - Admin,9456346783,Root,Contracter,N

@@ -1,0 +1,7 @@
+Emp_ID,First Name,Last Name,Department,Manager,Contact Number,Compensation,Privilege (Standard or Privileged),Emp_Status (Regular or Contracter),Is currently working or not? (Y or N)
+100001,Ram,Kumar,Finance,Nandha,8976125436,400000,Standard,Regular,Y
+100002,Varun,Sharma,Sales,Ravi,9845312673,500000,Standard,Contracter,N
+100003,Nitin,Shukla,Security,Prashant,8794512354,600000,Privileged,Regular,N
+100004,Swati,Verma,Sales,Rohan,9695238970,2100000,Privileged,Regular,Y
+100005,Ankita,Talreja,Design,Akash,7548659423,700000,Standard,Regular,Y
+100006,Tony,Blair,Sales,Nandha,6753214569,7000000,Standard,Regular,Y

@@ -1,0 +1,11 @@
+Customer ID,Bank Account No,First Name,Last Name,Father Name,Mother Name,Single or Married,Account Type,Address,Contact No,Email ID,ID Proof,Status (Active/Idle/Closed)
+500001,109700001,Ramesh,Powar,S Powar,Rita Powar,Single,Savings,Kochi,9999922222,ramesh@gmail.com,PAN Card,Active
+500002,109700002,Suresh,Raina,SK Raina,Vineeta Raina,Married,Savings,Lucknow,6567712345,suresh@gmail.com,Driver's License,Active
+500003,109700003,Anushka,Sharma,RK Sharma,Sunita Sharma,Married,Current,Mumbai,9888112235,anushka@gmail.com,Passport,Active
+500004,109700004,Ravi Chandra,Yadav,KR Yadav,Meera Devi,Single,Savings,Patna,7893214567,kyadav@gmail.com,Aadhar Card,Closed
+500005,109700005,Harshit,Saxena,KC Saxena,Seema Saxena,Single,Savings,Kanpur,9889208066,hsaxena10@gmail.com,PAN Card,Active
+500006,109700006,Ayushi,Sharma,LK Sharma,Beena Sharma,Single,Savings,Kanpur,6674512384,ayushisharma@gmail.com,PAN Card,Active
+500007,109700007,Ujjawal,Jain,AK Jain,Sadhna Jain,Single,Current,Mainpuri,6712354798,uceejay@gmail.com,Passpaort,Active
+500008,109700008,Ruchi,Shukla,DN Shukla,Lata,Single,Savings,Kanpur,8845367453,ruchiS@gmail.com,PAN Card,Active
+500009,109700009,Rajat,Tyagi,S Tyagi,Chetna Tyagi,Married,Savings,Jaipur,9833254545,rajat.tyagi@gmail.com,Aadhar Card,Active
+500010,109700010,Farhan,Akhtar,Javed Akhtar,Sabana Azmi,Single,Current,Mumbai,6767845321,kakhtar@gmail.com,Passport,Active

@@ -1,0 +1,17 @@
+Customer ID,Bank Account No,First Name,Last Name,Father Name,Mother Name,Single or Married,Account Type,Address,Contact No,Email ID,ID Proof,Status (Active/Idle/Closed),ATM Card Assigned
+500001,109700001,Ramesh,Powar,S Powar,Rita Powar,Single,Savings,Kochi,9999922222,ramesh@gmail.com,PAN Card,Active,50001000
+500002,109700002,Suresh,Raina,SK Raina,Vineeta Raina,Married,Savings,Lucknow,6567712345,suresh@gmail.com,Driver's License,Active,50001001
+500003,109700003,Anushka,Sharma,RK Sharma,Sunita Sharma,Married,Current,Mumbai,9888112235,anushka@gmail.com,Passport,Active,50001002
+500004,109700004,Ravi Chandra,Yadav,KR Yadav,Meera Devi,Single,Savings,Patna,7893214567,kyadav@gmail.com,Aadhar Card,Closed,50001003
+500005,109700005,Harshit,Saxena,KC Saxena,Seema Saxena,Single,Savings,Kanpur,9889208066,hsaxena10@gmail.com,PAN Card,Active,50001004
+500006,109700006,Ayushi,Sharma,LK Sharma,Beena Sharma,Single,Savings,Kanpur,6674512384,ayushisharma@gmail.com,PAN Card,Active,50001005
+500007,109700007,Ujjawal,Jain,AK Jain,Sadhna Jain,Single,Current,Mainpuri,6712354798,uceejay@gmail.com,Passpaort,Active,50001006
+500008,109700008,Ruchi,Shukla,DN Shukla,Lata,Single,Savings,Kanpur,8845367453,ruchiS@gmail.com,PAN Card,Active,50001007
+500009,109700009,Rajat,Tyagi,S Tyagi,Chetna Tyagi,Married,Savings,Jaipur,9833254545,rajat.tyagi@gmail.com,Aadhar Card,Active,50001008
+500010,109700010,Farhan,Akhtar,Javed Akhtar,Sabana Azmi,Single,Current,Mumbai,6767845321,kakhtar@gmail.com,Passport,Active,50001009
+500011,109700011,Aamir,Khan,XYZ khan,ABC khan,Married,Savings,Mumbai,9999999999,aamirkhan@gmail.com,Passport,Active,50001010
+500012,109700012,Sagar,Gupta,Brijesh Gupta,Radha Gupta,Single,Savings,Agra,9123456789,sagar.gupta@gmail.com,PAN Card,Active,50001011
+500013,109700013,Ramandeep Singh,Kalsi,Brahmjot Kalsi,Prabhjot Kalsi,Single,Savings,Kanpur,7665812345,raman@gmail.com,PAN Card,Active,50001012
+500014,109700014,XYZ,xyz,XYZ,XYZ,XYZ,XYZ,XYZ,XYZ,XYZ,XYZ,Active,50001013
+500015,109700015,Abhay,Singh,BK Singh,Sita Singh,Single,Savings,Kanpur,9965712345,abhay.singh@gmail.com,Driver's License,Active,50001014
+500016,109700016,Rahul Roy,Roy,Ramesh Roy,Aanya Roy,Single,Savings,Mumbai,9876512345,rroy@gmail.com,PAN Card,Active,50001015
