@@ -9,6 +9,8 @@ as well as numbers and symbols. The password should be a minimum of 6 characters
 import random
 import string
 import time
+import smtplib
+import os
 
 # Password parameters defined
 
@@ -51,5 +53,19 @@ final_password.extend(random.sample(special_characters, temp_list[3]))
 # Randomly Shuffling List
 random.shuffle(final_password)
 
-# Printing the Final Password
+# Printing the Final Password and also sending mail to the user
 print("\nGenerated Password is '{}'".format(''.join(final_password)))
+
+# Creating SMTP session
+with smtplib.SMTP("smtp.gmail.com", 587) as s:
+    s.ehlo()
+    s.starttls()
+    s.ehlo()
+    receiver_mail_id = input("Enter receiver's mail id - ")
+    user_id = os.environ.get("EMAIL")
+    password = os.environ.get("PASSWORD")
+    s.login(user_id, password)
+    subject = "Confidential: New Password Generated"
+    body = "Generated Password is '{}'".format(''.join(final_password))
+    s.sendmail(user_id, receiver_mail_id, f"Subject: {subject}\n\n{body}")
+    print("Password Sent Successfully!!")
