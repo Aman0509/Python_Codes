@@ -318,9 +318,9 @@ def controller():
 
     attempt = 7
     w = []
-    print("\n\nGuess this Word - ", end="")
+    used = []
     word = random.sample(file_content_list, 1)[0].upper().strip("\n")
-    # print(word)
+    print(f"\n\nGuess this {len(word)} letter word - ", end="")
     for i in range(len(word)):
         print("_", end="")
         w.append("_")
@@ -330,6 +330,7 @@ def controller():
         print()
         print()
         user_input = input("Your Input: ").upper()
+        used.append(user_input)
         loc = word.find(user_input)
         print()
         if len(user_input) == 0:
@@ -356,6 +357,7 @@ def controller():
                 break
             print("".join(w))
             hangman(attempt)
+        print(f"Used ones - {used}")
 
     if attempt == 0:
         print("\nSorry! You are out of attempts. Man has been hanged!")
