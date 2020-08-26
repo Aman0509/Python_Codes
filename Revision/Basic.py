@@ -2,6 +2,8 @@
 
 import decimal
 import fractions
+import copy
+import array as arr
 import Namespace_Example_2
 import Namespace_Example_3
 
@@ -313,6 +315,31 @@ def set_use():
     print("s2_d = ", s2_d)
     print("s1_sd = ", s1_sd)
     print("s2_sd = ", s2_sd)
+
+
+def frozen_set():
+    """Example of frozenset. Difference between set and frozenset is that frozenset is immutable
+    while set is mutable. Frozenset takes iterable object and convert it into immutable object"""
+
+    # Defining frozenset
+    print("Converting this list [1, 2, 3, 4] into frozenset = ", frozenset([1, 2, 3, 4]))
+    print("Converting this tupple (1, 2 ,3, 4) into frozenset = ", frozenset((1, 2, 3, 4)))
+    print("Converting this dict {'a': 1, 'b': 2} into frozenset = ", frozenset({'a': 1, 'b': 2}))
+
+    # frozenset methods
+    f1 = frozenset([43, 85, 97, 143])
+    f2 = f1.copy()
+    f3 = frozenset([43, 85, 4597, 9143])
+    print("f1 = ", f1)
+    print("f2 = f1.copy() --> ", f2)
+    print("f3 = ", f3)
+    print("f1.difference(f3) = ", f1.difference(f3))
+    print("f1.intersection(f3) = ", f1.intersection(f3))
+    print("f1.isdisjoint(f3) = ", f1.isdisjoint(f3))
+    print("f1.isusbset(f3) = ", f1.issubset(f3))
+    print("f1.issuperset(f3) = ", f1.issuperset(f3))
+    print("f2.symmetric_difference(f3) = ", f2.symmetric_difference(f3))
+    print("f1.union(f3) = ", f1.union(f3))
 
 
 def dict_use():
@@ -645,12 +672,239 @@ def namespace():
     Namespace_Example_3.outer_foo_ex_3()
 
 
+def switch_case():
+    """This function represents the switch case imple   mentation in python.
+    In Python, there is no switch case construct exist as we have in Java, C++ etc"""
+
+    # Implementing switch case using dictionary and function
+    def mon():
+        return "Monday -> Oatmeal for breakfast and Thai takeout Night"
+
+    def tues():
+        return "Tuesday -> Cheesecake Factory"
+
+    def wed():
+        return "Wednesday -> Halo Night and Comic book night"
+
+    def thur():
+        return "Thursday -> Pizza Night"
+
+    def fri():
+        return "Friday -> Chinese food night and Vintage game night"
+
+    def sat():
+        return "Saturday -> Cereal + Milk for breakfast and Laundary night"
+
+    def sun():
+        return "Sunday -> Anything can happen Sunday!!"
+
+    sheldon_weekly_calendar = {
+                                1: mon,
+                                2: tues,
+                                3: wed,
+                                4: thur,
+                                5: fri,
+                                6: sat,
+                                7: sun
+                               }
+
+    pick = int(input("Press between 1-7 to know about the Sheldon's schedule - "))
+    print(sheldon_weekly_calendar.get(pick, lambda: "invalid choice")())
+
+    # Switch Case Implementation using class
+    class SwitchCase:
+
+        def func_calling(self):
+            choice = int(input("Press between 1-7 to know about the Sheldon's schedule - "))
+            day_list = ['mon', 'tues', 'wed', 'thur', 'fri', 'sat', 'sun']
+            method = getattr(self, day_list[choice - 1], lambda: "Invalid Choice")
+            return method()
+
+        def mon(self):
+            return "Monday -> Oatmeal for breakfast and Thai takeout Night"
+
+        def tues(self):
+            return "Tuesday -> Cheesecake Factory"
+
+        def wed(self):
+            return "Wednesday -> Halo Night and Comic book night"
+
+        def thur(self):
+            return "Thursday -> Pizza Night"
+
+        def fri(self):
+            return "Friday -> Chinese food night and Vintage game night"
+
+        def sat(self):
+            return "Saturday -> Cereal + Milk for breakfast and Laundary night"
+
+        def sun(self):
+            return "Sunday -> Anything can happen Sunday!!"
+
+    temp = SwitchCase()
+    print(temp.func_calling())
+
+
+def copy_use():
+    """We will see the examples of creating shallow copy and deep copy
+    - Using '=' for creating copy, you may think that this creates a new object, it doesn't.
+      it only creates a new variable that shares the reference of the original object.
+    - You may want to have the original values unchanged and only modify the new values or vice versa.
+      For that, you can use one of these ways: Shallow Copy or Deep Copy
+    - Shallow copy creates a new object which stores the reference of the original elements.
+    - Deep Copy creates a new object and recursively adds the copies of nested objects present in the
+      original elements.
+    """
+
+    # Understand the impact of creating copy using assignment operator ('=')
+    l1 = [3, 4, 2, 6]
+    print("l1 = ", l1)
+    print("l2 = l1")
+    l2 = l1
+    print("l2[2] = 27")
+    l2[2] = 27
+    print("See the value of l1 and l2 now")
+    print("l1 = ", l1)
+    print("l2 = ", l2)
+    print()
+    # Creating Shallow Copy
+    print("Creating Shallow Copy")
+    # First Method - Using built-in func like list() for list, set() for set and dict() for dictionary.
+    print("First Method - Using built-in func like list() for list, set() "
+          "for set and dict() for dictionary")
+    l3 = [2, 7, 9, 4]
+    l4 = list(l3)
+    l4[1] = 'a'
+    print("l3 = ", l3)
+    print("l4 = ", l4)
+    print()
+
+    # Second Method - Using Slicing operator
+    print("Second Method - Using Slicing operator")
+    l5 = l3[:]
+    l5[3] = "hello"
+    print("l3 = ", l3)
+    print("l5 = ", l5)
+    print()
+
+    # Third Method - Using List Comprehension
+    print("Third Method - Using List Comprehension")
+    l6 = [i for i in l3]
+    l6[1] = 'o'
+    print("l3 = ", l3)
+    print("l6 = ", l6)
+    print()
+
+    # Fourth Method - Using Copy Module
+    print("Fourth Method - Using Copy Module")
+    l7 = copy.copy(l3)
+    l7[3] = 10000
+    print("l3 = ", l3)
+    print("l7 = ", l7)
+    print()
+
+    # Limitation of Shallow Copy
+    print("Limitation of Shallow Copy")
+    l8 = [[1, 2, 3], ['a', 'b', 'c'], ["Ok", "@s", 139]]
+    print("l8 = ", l8)
+    print("Creating a shallow copy of l8 using copy module and calling it l9")
+    l9 = copy.copy(l8)
+    print("Changing l9[2][2] = 'Python' and print both l8 and l9")
+    l9[2][2] = "Python"
+    print("l8 = ", l8)
+    print("l9 = ", l9)
+    print("Viola!!! and there is your limitation")
+    print("To overcome this, we will use deepcopy() from copy module")
+    print()
+
+    # Creating Deep Copy
+    print("Creating deep copy of l8 and calling it l10")
+    l10 = copy.deepcopy(l8)
+    print("l8 = ", l8)
+    print("l10 = ", l10)
+    print("Changing l10[2][2] = 3000")
+    l10[2][2] = 3000
+    print("l10 now = ", l10)
+    print("l8 = ", l8)
+
+
+def array_use():
+    """We will see array and it's examples
+    Array is a collection of ordered series elements of the same type"""
+
+    # Creating Arrays - It requires to import array module
+    print("Creating Arrays...")
+    a1 = arr.array("d", [1, 2, 3, 4])
+    a2 = arr.array("f", [5.3, 8.1, 9.2, 1.7])
+    print("arr.array('d', [1, 2, 3, 4]) = ", a1)
+    print("arr.array('f', [5.3, 8.1, 9.2, 1.7])", a2)
+    print()
+
+    # Accessing and slicing array elements
+    print("Accessing and slicing array element...")
+    print("a1[2] = ", a1[2])
+    print("a2[3] = ", a2[3])
+    print("a2[-1] = ", a2[-1])
+    print("a2[0:3] = ", a2[0:3])
+    print()
+
+    # Finding length of an array
+    print("Finding length of an array...")
+    print("len(a1) = ", len(a1))
+    print("a2.buffer_info(a2) = ", a2.buffer_info())
+    print()
+
+    # Adding/Changing element of an array
+    print("Adding/Changing element of an array...")
+    print("a1.append(439) = ", a1.append(439))
+    print("a2.extend([45.2, 70.4]) = ", a2.extend([45.2, 70.4]))
+    print("a1.insert(3, 245) = ", a1.insert(3, 245))
+    print()
+
+    # Removing elements from array
+    print("Removing elements from array...")
+    print("a2.pop() = ", a2.pop())  # In this case, last element will get removed
+    print("a1.pop(4) = ", a1.pop(4))
+    a1.remove(2)
+    print("After a2.remove(2), a2 is ", a1)
+    print()
+
+    # Array Concatenation
+    print("Array Concatenation...")
+    a3 = arr.array("b", [97, 98])
+    a4 = arr.array("b", [99, 100])
+    print("a3 = ", a3)
+    print("a4 = ", a4)
+    c = a3 + a4
+    print("c = a3 + a4 --> ", c)
+    print("Note - Concatenation is allowed if arrays have same datatype")
+    print()
+
+    # Creating array as per User's choice
+    temp_arr = arr.array('d', [])
+    size = int(input("Enter the size of your array - "))
+    for i in range(size):
+        temp = int(input(f"Enter {i} element - "))
+        temp_arr.append(temp)
+    print(f"Your defined array is {temp_arr}")
+    print()
+
+    # typecode - When you're not aware about the datatype of array and you need to use it
+    # for copy or other purpose.
+    print("Using typecode...")
+    a5 = arr.array("d", [32, 53, 56, 134, 895, 33467])
+    a6 = arr.array(a5.typecode, (a for a in a5))
+    print(a5)
+    print()
+
+
 def null_func():
     """It is null function"""
     pass
 
 
 if __name__ == "__main__":
+
     null_func()
     # print_use()
     # frac_deci_use()
@@ -663,9 +917,13 @@ if __name__ == "__main__":
     # list_use()
     # tupple_use()
     # set_use()
+    # frozen_set()
     # dict_use()
     # arguments()
     # lambda_func()
     # string_use()
     # string_method()
-    namespace()
+    # namespace()
+    # switch_case()
+    # copy_use()
+    # array_use()
