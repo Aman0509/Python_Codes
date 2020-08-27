@@ -1,0 +1,4 @@
+def foo():
+    print("This code stored in a file executed using compile function")
+
+foo()
