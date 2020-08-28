@@ -163,7 +163,7 @@ print()
 
 # compile(source, filename, mode, flags = 0, dont_inherit=False, optimize=-1)
 print("compile()".center(30, "*"))
-code_in_string = 'a = 5\nb = 6\nsum = a+b\nprint("sum = ", sum)'
+code_in_string = 'a = 5\nb = 6\ns = a+b\nprint("s = ", s)'
 code_in_object = compile(code_in_string, 'sum', 'exec')
 exec(code_in_string)
 
@@ -547,5 +547,68 @@ print("After Modification, Name is - ", p.name)
 setattr(p, 'age', 32)
 print("age attribute is not there but it is set using setattr() - ", p.age)
 print()
+
+# ------------------------------------------------------------------------------------
+
+# slice(start, stop, step) -->  It returns a slice object that can use the to slice any sequence like list, tuple etc
+print("slice".center(30, "*"))
+print("slice(5) = ", slice(5))
+print("slice(1, 5, 1) = ", slice(1, 5, 1))
+print("[13, 34, 65, 1234, 4356, 545, 17, 854][slice(5)] = ", [13, 34, 65, 1234, 4356, 545, 17, 854][slice(5)])
+print("[13, 34, 65, 1234, 4356, 545, 17, 854][slice(1, 5, 1)] = ", [13, 34, 65, 1234, 4356, 545, 17, 854][slice(1, 5, 1)])
+print()
+
+# ------------------------------------------------------------------------------------
+
+# sorted(iterable, key=None, reverse=False)
+print("sorted()".center(30, '*'))
+print("sorted([93, 432, 1, 23, 97, 43]) = ", sorted([93, 432, 1, 23, 97, 43]))
+print("sorted([93, 432, 1, 23, 97, 43], reverse=True) = ", sorted([93, 432, 1, 23, 97, 43], reverse=True))
+print("sorted([[1, 3, 5], ('a', 'b', 'c', 'd'), {332, 'a', 12, 'd'}], key=len) = ", sorted([[1, 3, 5], ('a', 'b'), {332, 'a', 12, 'd'}], key=len))
+print()
+
+# ------------------------------------------------------------------------------------
+
+# staticmethod() and str()
+
+# ------------------------------------------------------------------------------------
+
+# sum(iterable, start)
+print("sum()".center(30, "*"))
+print("sum((134, 45.8, 313, 1000.54)) = ", sum((134, 45.8, 313, 1000.54)))
+print("sum([1, 2, -6], 10) = ", sum([1, 2, -6], 10))
+print()
+
+# ------------------------------------------------------------------------------------
+
+# super(), tuple(), and type()
+
+# ------------------------------------------------------------------------------------
+
+# vars(object)
+print("vars()".center(30, "*"))
+print("vars(TempClass2) = ", vars(TempClass2))
+print("vars(temp_obj) = ", vars(temp_obj))
+print()
+
+# ------------------------------------------------------------------------------------
+
+# zip(*iterables) --> it takes 0 or more iterables, aggregates them in a tuple and return it.
+print("zip()".center(30, "*"))
+print("zip([1, 2, 3]('a', 'b', 'c')) = ", zip([1, 2, 3], ('a', 'b', 'c')))
+print("zip([1, 2, 3]('a', 'b', 'c')) = ", list(zip([1, 2, 3], ('a', 'b', 'c'))))
+print("zip([1, 2, 3]('a', 'b')) = ", list(zip([1, 2, 3], ('a', 'b'))))
+z = zip([1, 2, 3], ['a', 'b', 'c'], ['$', '#', '*'])
+z1, z2, z3 = zip(*z)  # Unzipping
+print("z = zip([1, 2, 3], ['a', 'b', 'c'], ['$', '#', '*'])")
+print("z1, z2, z3 = zip(*z)")
+print("z1 = ", z1)
+print("z2 = ", z2)
+print("z3 = ", z3)
+print()
+
+# ------------------------------------------------------------------------------------
+
+# __import__()
 
 # ------------------------------------------------------------------------------------
