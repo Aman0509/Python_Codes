@@ -1,15 +1,20 @@
 #  How to define a class
 
-class Class1:
+class Class0:
+    """
+    As soon as we define a class, a new class object is created with the same name. This class object allows
+    us to access the different attributes as well as to instantiate new objects of that class.
+    """
     # Class Variables
     a = 1
     b = 2
     c = 3
 
 
-print("Class1.a = ", Class1.a)
-print("Class1.a = ", Class1.b)
-print("Class1.a = ", Class1.c)
+print("Class0.a = ", Class0.a)
+print("Class0.a = ", Class0.b)
+print("Class0.a = ", Class0.c)
+print(Class0.__doc__)
 print()
 
 
@@ -17,12 +22,31 @@ print()
 
 # Creating object and constructor in class
 
+class Class1:
+    """This is a default Constructor. In this case __init__ method is not defined in the class but still we are able to
+     create object. This is because python implicitly inject constructor with no body, like below:
+     def __init__(self):
+        # no body, does nothing
+     """
+
+    def some_method(self):
+        print("This is a method defined in a class where no constructor is present.")
+
+
+ob = Class1()
+ob.some_method()
+print()
+
+
+# ---------------------------------------------------------------------------------------------------
+
+
 class Class2:
     # Class Variable
     a = 23
 
     def __init__(self):
-        """This is a default constructor"""
+        """This is a Non parameterized constructor as nothing is passed in init method"""
         # Instance Variable
         self.b = 24
         self.c = 25
@@ -96,6 +120,7 @@ obj4._protect()
 obj4._Class4__private()  # <-- In that way, you can access private attributes or methods. This is called Name Mangling.
 print()
 
+
 # ---------------------------------------------------------------------------------------------------
 
 # Name Mangling is also helpful for letting subclasses override methods without breaking interclass method calls.
@@ -120,6 +145,7 @@ obj5 = Class5Child()
 obj5.method1()
 print()
 
+
 # ---------------------------------------------------------------------------------------------------
 
 # Polymorphism
@@ -142,5 +168,87 @@ class Class6Child(Class6):
 
 obj6 = Class6Child()
 obj6.method1()
+print()
 
 
+# ---------------------------------------------------------------------------------------------------
+
+# Constructor Overloading - It is not allowed in python
+
+# Example 1 - More than one constructor
+
+class Test1:
+
+    def __init__(self):
+        print("1st Constructor")
+
+    def __init__(self):
+        print("2nd Constructor")
+
+    def __init__(self):
+        print("3rd Constructor")
+
+
+obj5 = Test1()
+
+
+# Example 2 - Two different kind of Constructor
+
+class Test2:
+
+    def __init__(self):
+        print("1st Constructor")
+
+    def __init__(self, a):
+        self.a = a
+        print(f"2nd Constructor and {self.a}")
+
+
+# obj6 = Test2() <-- This will throw error
+obj6 = Test2(4)
+print()
+
+
+# Example 3 - Using default arguments is not considered as constructor overloading
+
+class Test3:
+
+    def __init__(self, a=5, b=6):
+        print("Sum = ", a + b)
+
+
+obj7 = Test3()
+obj7 = Test3(3, 6)
+print()
+
+# ---------------------------------------------------------------------------------------------------
+
+# Destructor in Python
+"""
+- Like destructor is counter-part of a constructor, function __del__ is the counter-part of __new__.
+- __del__ method is called for ay object when the reference count for that object becomes zero.
+- As a reference counting is performed, hence it is not necessary that for an object __del__ method will be called if it
+  goes out of scope. The destructor method will only be called when the reference count becomes zero.
+- Destructor is called after the program ended or when all the references to object are deleted.
+
+Cases when destructor do not behave correctly
+- Circular Referencing
+- Exception in __init__ method
+
+"""
+
+
+class Destructor:
+
+    def __init__(self):
+        print("Inside init")
+        print("init will initialise")
+
+    def __del__(self):
+        print("Inside del")
+        print("It will free up memory be deleting the object when it's reference count is zero")
+
+
+print("Creating Object..")
+obj = Destructor()
+print("End of creating object and it is not in use anymore")
