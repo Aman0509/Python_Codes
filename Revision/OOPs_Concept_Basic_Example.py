@@ -152,7 +152,8 @@ print()
 
 
 class Class6:
-
+    # class variable
+    temp = "Baba Yaga"
     def method1(self):
         print("This is a method1 of Class6")
 
@@ -162,7 +163,10 @@ class Class6Child(Class6):
     def method1(self):
         """If for some reason, you still want to access the overridden method of the parent class in the child class,
         you can call it using the super() function"""
+        print(super().temp)  # By both ways, you can
+        print(Class6.temp)   # call parent class variables or methods
         super().method1()
+        Class6.method1(self)
         print("This is a method1 of Class6Child")
 
 
@@ -247,8 +251,33 @@ class Destructor:
     def __del__(self):
         print("Inside del")
         print("It will free up memory be deleting the object when it's reference count is zero")
+        print()
 
 
 print("Creating Object..")
 obj = Destructor()
 print("End of creating object and it is not in use anymore")
+
+
+# ---------------------------------------------------------------------------------------------------
+
+# Method Overloading
+
+class Overloading:
+
+    def method(self, m = None, n = None, o = None):
+        if m is not None and n is not None and o is not None:
+            print("All three arguments were pass")
+        elif m is not None and n is not None:
+            print("2 arguments were pass")
+        elif m is not None:
+            print("Only one was passed")
+        else:
+            print("No arguments were passed")
+
+
+obj = Overloading()
+obj.method()
+obj.method(2, 6)
+obj.method(7, 2, 8)
+print()
