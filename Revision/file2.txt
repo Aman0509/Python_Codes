@@ -1,0 +1,1 @@
+This is a file2 and data is written into it via write method
