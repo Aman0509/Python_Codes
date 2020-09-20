@@ -154,9 +154,21 @@ print("np.eye(5, k = 2)", arr14)
 # diag()
 
 arr15 = np.diag([1, 4, 2])
-print("np.diag(6) = ", arr15)
+print("np.diag([1, 4, 2]) = ", arr15)
 arr15 = np.diag(np.arange(1, 10, 2))
 print("np.diag(np.arange(1, 10, 2)) = ", arr15)
 print()
 
 # ---------------------------------------------------------------------------------------------------------------------
+
+'''
+numpy.fromfunction() function construct an array by executing a function over each coordinate and the resulting array, 
+therefore, has a value fn(x, y, z) at coordinate (x, y, z).
+
+Syntax - numpy.fromfunction(function, shape, dtype)
+'''
+
+# fromfunction()
+
+arr16 = np.fromfunction(lambda x,y: x+y, (3,3), dtype=np.int)
+print("arr16 using fromfunction() = \n", arr16)
