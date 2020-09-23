@@ -30,6 +30,8 @@ print()
 
 # Attributes of ndarray class. We will take arr2 to demonstrate attributes.
 
+arr = np.array([[[1, 2, 3], [4, 5, 6]]])  # Check out the shape of this array
+print("arr.shape = ", arr.shape)
 print("arr2.shape = ", arr2.shape)
 print("arr2.size = ", arr2.size)
 print("arr2.ndim = ", arr2.ndim)

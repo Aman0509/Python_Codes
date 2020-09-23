@@ -11,7 +11,11 @@ print("arr1[::-1] = ", arr1[::-1])
 print()
 
 '''
-With multidimensional arrays, element selections like those introduced in the previous section can be applied on each 
+Views - Sub-arrays that are extracted from arrays using slice operations are alternative views of the same underlying 
+array data. That is, they are arrays that refer to the same data in the memory as the original array, but with a 
+different strides configuration. When elements in a view are assigned new values, the values of the original array are 
+therefore also updated.
+With multidimensional arrays, element selections like those introduced in the previous section can be applied on each Subarrays  that are extracted from arrays using slice operations are alternative views of the same underlying array data. That is, they are arrays that refer to the same data in the memory as the original array, but with a different strides configuration. When elements in a view are assigned new values, the values of the original array are therefore also updated.
 axis (dimension). The result is a reduced array where each element matches the given selection rules.
 '''
 
@@ -47,7 +51,5 @@ selected from the indexed array. If the value is False, then element n is not se
 
 print("arr3 > 6 = ", arr3 > 6)
 print("arr3[arr3 > 6] = ", arr3[arr3 > 6])
-
-
 
 
