@@ -172,3 +172,4 @@ Syntax - numpy.fromfunction(function, shape, dtype)
 
 arr16 = np.fromfunction(lambda x, y: x+y, (3, 3), dtype=np.int)
 print("arr16 using fromfunction() = \n", arr16)
+

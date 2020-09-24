@@ -15,7 +15,11 @@ Views - Sub-arrays that are extracted from arrays using slice operations are alt
 array data. That is, they are arrays that refer to the same data in the memory as the original array, but with a 
 different strides configuration. When elements in a view are assigned new values, the values of the original array are 
 therefore also updated.
-With multidimensional arrays, element selections like those introduced in the previous section can be applied on each Subarrays  that are extracted from arrays using slice operations are alternative views of the same underlying array data. That is, they are arrays that refer to the same data in the memory as the original array, but with a different strides configuration. When elements in a view are assigned new values, the values of the original array are therefore also updated.
+With multidimensional arrays, element selections like those introduced in the previous section can be applied on each 
+Subarrays that are extracted from arrays using slice operations are alternative views of the same underlying array 
+data. That is, they are arrays that refer to the same data in the memory as the original array, but with a different 
+strides configuration. When elements in a view are assigned new values, the values of the original array are therefore
+also updated.
 axis (dimension). The result is a reduced array where each element matches the given selection rules.
 '''
 
@@ -52,4 +56,14 @@ selected from the indexed array. If the value is False, then element n is not se
 print("arr3 > 6 = ", arr3 > 6)
 print("arr3[arr3 > 6] = ", arr3[arr3 > 6])
 
+
+'''
+Ellipses(...) in Indexing - If you have 2D array, it will return the all row or column of a passes column and row of array.
+'''
+
+arr4 = np.array([['IBM', 'Samsung', 'Apple'], [1911, 1938, 1976], [380000, 489000, 137000]])
+print("arr4 = \n", arr4)
+print("arr4[2, ...] \n", arr4[2, ...])
+print("arr4[..., 1] \n", arr4[..., 1])
+print()
 
