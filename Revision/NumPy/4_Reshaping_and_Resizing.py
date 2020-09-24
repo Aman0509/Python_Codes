@@ -11,6 +11,7 @@ arr1 = np.array([[1, 2], [3, 4]])
 print("arr1 = ", arr1)
 print("np.reshape(arr1,(1, 4))\n", np.reshape(arr1, (1, 4)))
 print("arr1.reshape(4) \n", arr1.reshape(4))
+print("np.arange(12).reshape(2, -1)\n", np.arange(12).reshape(2, -1))
 print()
 
 
