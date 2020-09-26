@@ -1,5 +1,5 @@
 import numpy as np
-from matplotlib import pyplot as plt
+import matplotlib.pyplot as plt
 
 '''
 Arrays Created from Lists and Other Array-Like Objects
@@ -111,6 +111,7 @@ xx, yy = np.meshgrid(arr10, arr11)
 print("All the x - axis value - ", xx)
 print("All the y - axis value - ", yy)
 plt.plot(xx, yy, marker='.', color='k', linestyle='none')
+plt.show()
 print()
 
 # ----------------------------------------------------------------------------------------------------------------------
@@ -172,4 +173,28 @@ Syntax - numpy.fromfunction(function, shape, dtype)
 
 arr16 = np.fromfunction(lambda x, y: x+y, (3, 3), dtype=np.int)
 print("arr16 using fromfunction() = \n", arr16)
+print()
 
+# ---------------------------------------------------------------------------------------------------------------------
+
+'''
+Structured Array:
+Numpy’s Structured Array is similar to Struct in C. It is used for grouping data of different types and sizes. Structure
+array uses data containers called fields. Each data field can contain data of any type and size. Array elements can be 
+accessed with the help of dot notation.
+'''
+
+name = ['abc1', 'abc2', 'abc3', 'abc4']
+age = [20, 12, 45, 34]
+w = [50.5, 33.0, 80.9, 77.3]
+stu_name = np.zeros(4, dtype=[('name', 'U25'), ('age', np.int), ('weight', np.float)])
+print("stu_name = \n", stu_name)
+stu_name['name'] = name
+stu_name['age'] = age
+stu_name['weight'] = w
+print("stu_name = \n", stu_name)
+
+# Trying another way
+arr17 = np.array([['abc1', 20, 50.5], ['abc2', 12, 33.0]])
+print("arr17 = \n", arr17)
+print()
