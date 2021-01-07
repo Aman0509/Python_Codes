@@ -75,6 +75,16 @@ class SingleLinkedList:
             else:
                 raise (IndexError, "Your index input is more than the length of Linked List")
 
+    def reverse(self):
+        prev = None
+        next = self.head
+        while next is not None:
+            temp = next.ref
+            next.ref = prev
+            prev = next
+            next = temp
+        self.head, self.tail = self.tail, self.head
+
 
 o1 = SingleLinkedList()
 o1.insert(12)
@@ -90,6 +100,8 @@ o1.del_at_index(o1.length() - 1)
 o1.del_at_index(3)
 print("SLL - ", o1)
 print("Length of SLL - ", o1.length())
+o1.reverse()
+print(o1)
 
 
 # def insert(self, data, pos=0):
