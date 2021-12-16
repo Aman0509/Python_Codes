@@ -51,6 +51,25 @@ def postOrderTransversal(root):
         print(root.data, end=" ")
 
 
+def postOrderTransversalIterative(root):
+    stack = []
+    n = root
+    while n or stack:
+        if n:
+            stack.append(n)
+            n = n.left
+        else:
+            temp1 = stack[-1].right
+            if temp1 is None:
+                temp1 = stack.pop()
+                print(temp1.data, end=" ")
+                while stack and temp1 == stack[-1].right:
+                    temp1 = stack.pop()
+                    print(temp1.data, end=" ")
+            else:
+                n = temp1
+
+
 def levelOrderTransversal(root):
     queue = []
     t = ""
@@ -158,8 +177,9 @@ bin_tree = create([20, 100, 3, 50, 15, 250, 35, 222], None, 0, 8)
 # insert(bin_tree, 2345)
 # insert(bin_tree, 179)
 # print()
-print(levelOrderTransversal(bin_tree))
-delNode(bin_tree, 3)
-print(levelOrderTransversal(bin_tree))
+# print(levelOrderTransversal(bin_tree))
+# delNode(bin_tree, 3)
+# print(levelOrderTransversal(bin_tree))
+postOrderTransversalIterative(bin_tree)
 
 

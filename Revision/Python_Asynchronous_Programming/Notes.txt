@@ -1,0 +1,8 @@
+Understanding Coroutines 
+- https://stackabuse.com/coroutines-in-python
+- https://www.youtube.com/watch?v=T3tmkWfOHa8
+- https://www.integralist.co.uk/posts/python-generators/#why-use-coroutines
+
+Concurrency in Python - https://stackabuse.com/concurrency-in-python
+
+
